@@ -1,5 +1,6 @@
-# ReactOS Royale
+# HoloV2
 
+A complete remake of StarrieOS' holographic theme, forked from ReactOS' Modern theme (which is apparently open-source)
 
 install: 
 copy the contents of bin/ to the root of the ReactOS repository
