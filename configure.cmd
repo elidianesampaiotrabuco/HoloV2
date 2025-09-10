@@ -26,12 +26,12 @@ exit /B 0
     mkdir "%_prefix%"
     mkdir "%_prefix%\media"
     mkdir "%_prefix%\media\themes"
-    mkdir "%_prefix%\media\themes\modern.msstyles"
-	mkdir "%_prefix%\media\themes\modern.msstyles\lang"
-	mkdir "%_prefix%\media\themes\modern.msstyles\textfiles"
-	mkdir "%_prefix%\media\themes\modern.msstyles\bitmaps"
-	mkdir "%_prefix%\media\themes\modern.msstyles\bitmaps\Light"
-	mkdir "%_prefix%\media\themes\modern.msstyles\bitmaps\Dark"
+    mkdir "%_prefix%\media\themes\holo.msstyles"
+	mkdir "%_prefix%\media\themes\holo.msstyles\lang"
+	mkdir "%_prefix%\media\themes\holo.msstyles\textfiles"
+	mkdir "%_prefix%\media\themes\holo.msstyles\bitmaps"
+	mkdir "%_prefix%\media\themes\holo.msstyles\bitmaps\Light"
+	mkdir "%_prefix%\media\themes\holo.msstyles\bitmaps\Dark"
    
    	echo [+] creating wallpaper directory tree..
     mkdir "%_prefix%\modules"
@@ -67,16 +67,16 @@ exit /B 0
 	call :mk_theme_textfiles	
 
 	echo [+] copying LICENSE for theme....
-	copy "%_dir%\src\themes\modern.msstyles\LICENSE" ^
-	"%_prefix%\media\themes\modern.msstyles\LICENSE"
+	copy "%_dir%\src\themes\holo.msstyles\LICENSE" ^
+	"%_prefix%\media\themes\holo.msstyles\LICENSE"
 	
 	echo [+] copying theme CMakeLists.txt....
-	copy "%_dir%\src\themes\modern.msstyles\CMakeLists.txt" ^
-	"%_prefix%\media\themes\modern.msstyles\CMakeLists.txt"
+	copy "%_dir%\src\themes\holo.msstyles\CMakeLists.txt" ^
+	"%_prefix%\media\themes\holo.msstyles\CMakeLists.txt"
 	
 	echo [+] copying theme rc....
-	copy "%_dir%\src\themes\modern.msstyles\modern.rc" ^
-	"%_prefix%\media\themes\modern.msstyles\modern.rc"
+	copy "%_dir%\src\themes\holo.msstyles\modern.rc" ^
+	"%_prefix%\media\themes\holo.msstyles\modern.rc"
 	
 	echo [+] updating reactos theme CMake....
 	type "%_dir%\src\wallpapers\CMakeLists.txt" ^
@@ -91,8 +91,8 @@ exit /B 0
 		if "%response%"==%%q (
 			echo [+] building Light theme bitmaps....
 			call "%_dir%\scripts\tif2bmp.cmd" ^
-			"%_dir%\src\themes\modern.msstyles\bitmaps\Light\" ^
-			"%_prefix%\media\themes\modern.msstyles\bitmaps\Light\"
+			"%_dir%\src\themes\holo.msstyles\bitmaps\Light\" ^
+			"%_prefix%\media\themes\holo.msstyles\bitmaps\Light\"
 			exit /B 0
 		)
 	)
@@ -112,8 +112,8 @@ exit /B 0
 		if "%response%"==%%q (
 			echo [+] building Dark theme bitmaps....
 			call "%_dir%\scripts\tif2bmp.cmd" ^
-			"%_dir%\src\themes\modern.msstyles\bitmaps\Dark\" ^
-			"%_prefix%\media\themes\modern.msstyles\bitmaps\Dark\"
+			"%_dir%\src\themes\holo.msstyles\bitmaps\Dark\" ^
+			"%_prefix%\media\themes\holo.msstyles\bitmaps\Dark\"
 			exit /B 0
 		)
 	)
@@ -128,14 +128,14 @@ exit /B 0
 
 :mk_lang (
 	echo [+] copying theme language files..
-	xcopy "%_dir%\src\themes\modern.msstyles\lang\*" ^
-	"%_prefix%\media\themes\modern.msstyles\lang\"
+	xcopy "%_dir%\src\themes\holo.msstyles\lang\*" ^
+	"%_prefix%\media\themes\holo.msstyles\lang\"
 	exit /B 0
 )
 
 :mk_theme_textfiles (
 	echo [+] copying theme textfiles....
-	xcopy "%_dir%\src\themes\modern.msstyles\textfiles\*" ^
-	"%_prefix%\media\themes\modern.msstyles\textfiles\*" /s
+	xcopy "%_dir%\src\themes\holo.msstyles\textfiles\*" ^
+	"%_prefix%\media\themes\holo.msstyles\textfiles\*" /s
 	exit /B 0
 )
